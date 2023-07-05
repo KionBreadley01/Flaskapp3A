@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title%}
+ Acerca de    
+{% endblock %}
+
+{% block content %}
+    <h1>Categories page </h1>
+    <h2>lista de categorias </h2>
+    <a href="{{ url_for('create_cat') }}" class="btn">Nueva Categoria</a>
+    <table id="categories">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cat in categories %}
+            <tr>
+               <td>  {{cat.id}} </td> 
+               <td>{{ cat.category}}</td> 
+               <td>{{cat.description}}</td>
+               <td>Editar / Eliminar</td> 
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}
