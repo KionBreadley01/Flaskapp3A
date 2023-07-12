@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, flash, url_for
 
-from models.categories import CreateCategoryForm
+from models.categories import Category
+from forms.category_forms import CreateCategoryForm, UpdateCategoryForm
 
 category_views = Blueprint('category',__name__)
 
