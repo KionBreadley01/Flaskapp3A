@@ -1,4 +1,4 @@
-from db import get_connection
+from .db import get_connection
 from werkzeug.security import generate_password_hash, check_password_hash
 
 mydb = get_connection()

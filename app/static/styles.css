@@ -78,4 +78,10 @@ nav li a:hover {
     background-color: #04AA6D;
     color: white;
   }
+  .fa-trash{
+    color: red;
+  }
+  .fa-refresh{
+    color: #04AA6D;
+  }
 

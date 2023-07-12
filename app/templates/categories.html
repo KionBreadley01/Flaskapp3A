@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
-{% block title%}
- Acerca de    
+{% block title %}
+Categorias
 {% endblock %}
-
+    
 {% block content %}
-    <h1>Categories page </h1>
-    <h2>lista de categorias </h2>
-    <a href="{{ url_for('create_cat') }}" class="btn">Nueva Categoria</a>
-    <table id="categories">
+<h1>Categories Page</h1>
+<h2>Lista de Categorias</h2>
+<a href="{{ url_for('create_cat') }}" class="btn">Nueva Categoria</a>
+<table id="categories">
         <thead>
             <tr>
                 <th>ID</th>
@@ -22,10 +22,16 @@
             <tr>
                <td>  {{cat.id}} </td> 
                <td>{{ cat.category}}</td> 
-               <td>{{cat.description}}</td>
-               <td>Editar / Eliminar</td> 
+               <td>{{cat.description}} </td>
+               <td>
+                <a href="{{ url_for('update_cat', id=cat.id) }}">
+                <i class="fa fa-refresh fa-spin"></i> 
+            </a> /
+            <a href="{{ url_for('delete_cat', id=cat.id) }}"></a>
+                 <i class="fa fa-trash"></i></td> 
+                </a> 
+             </tr>
             {% endfor %}
-        </tr>
         </tbody>
     </table>
-{% endblock %}
+{% endblock content%}
